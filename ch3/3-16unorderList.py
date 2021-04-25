@@ -42,7 +42,7 @@ class UnorderList:
         检查列表是否为空列表,原理检查列表的头部是否为指向None的引用
         :return:
         """
-        return self.head == None
+        return self.head is None
 
     def add(self, item):
         """
@@ -61,7 +61,7 @@ class UnorderList:
         """
         current = self.head
         count = 0
-        while current != None:
+        while current is not None:
             count += 1
             current = current.getNext()
 
@@ -75,7 +75,7 @@ class UnorderList:
         """
         current = self.head
         found = False
-        while current != None and not found:
+        while current is not None and not found:
             if current.getData() == item:
                 found = True
             else:
@@ -99,7 +99,7 @@ class UnorderList:
                 previous = current
                 current = current.getNext()
 
-        if previous == None:
+        if previous is None:
             self.head = current.getNext()
         else:
             previous.setNext(current.getNext)
@@ -118,7 +118,7 @@ class OrderList:
         检查列表是否为空列表,原理检查列表的头部是否为指向None的引用
         :return:
         """
-        return self.head == None
+        return self.head is None
 
     def length(self):
         """
@@ -127,7 +127,7 @@ class OrderList:
         """
         current = self.head
         count = 0
-        while current != None:
+        while current is not None:
             count += 1
             current = current.getNext()
 
@@ -142,7 +142,7 @@ class OrderList:
         current = self.head
         previous = None
         stop = False
-        while current != None and not stop:
+        while current is not None and not stop:
             if current.getData() > item:
                 stop = True
             else:
@@ -167,7 +167,7 @@ class OrderList:
         current = self.head
         found = False
         stop = False
-        while current != None and not found and not stop:
+        while current is not None and not found and not stop:
             if current.getData() == item:
                 found = True
             else:
@@ -194,7 +194,7 @@ class OrderList:
                 previous = current
                 current = current.getNext()
 
-        if previous == None:
+        if previous is None:
             self.head = current.getNext()
         else:
             previous.setNext(current.getNext)
